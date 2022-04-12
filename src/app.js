@@ -8,7 +8,7 @@ app.use(express.json());
 app.use("/users", router);
 app.use("/login", routerLogin);
 
-const port = 3001;
+const port = 3002;
 
 app.listen(port, () => {
   console.log(`App rodando na porta ${port}`);

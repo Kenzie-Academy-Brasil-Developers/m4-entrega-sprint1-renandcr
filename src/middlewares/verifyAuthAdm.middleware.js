@@ -8,7 +8,7 @@ const verifyAuthAdmMiddleware = (request, response, next) => {
 
   if (id === uuid) {
     users.splice(userIndex, 1);
-    return response.status(401).json({ message: "User deleted with success" });
+    return response.status(200).json({ message: "User deleted with success" });
   }
   if (!isAdm) {
     return response.status(401).json({ message: "Missing admin permissions" });

@@ -17,20 +17,20 @@ const updateUserService = ({ email, name, uuid, isAdm, id }) => {
     isAdm: user.isAdm,
   };
 
-  Object.assign(users[userIndex], updatedUser);
+  if (id === uuid || isAdm) {
+    Object.assign(users[userIndex], updatedUser);
 
-  const { updatedOn } = user;
+    const { updatedOn } = user;
 
-  if (id === uuid) {
     const { name, email, id, isAdm, createdOn } = users[userIndex];
+
     const dataShow = { name, email, id, createdOn, updatedOn, isAdm };
+
     return dataShow;
   }
 
   if (!isAdm) {
     throw new Error("Missing admin permissions");
   }
-
-  return users[userIndex];
 };
 export default updateUserService;
