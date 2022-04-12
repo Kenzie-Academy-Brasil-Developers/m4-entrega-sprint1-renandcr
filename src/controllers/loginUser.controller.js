@@ -5,7 +5,7 @@ const loginUserController = (request, response) => {
 
   try {
     const token = loginUserService({ email, password });
-    return response.status(200).json(token);
+    return response.status(200).json({ token: token });
   } catch (err) {
     response.status(401).json({ message: err.message });
   }
