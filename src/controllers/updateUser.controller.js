@@ -9,7 +9,7 @@ const updateUserController = (request, response) => {
     const userUpdate = updateUserService({ name, email, uuid, id, isAdm });
     return response.status(200).json(userUpdate);
   } catch (err) {
-    return response.status(400).json({ message: err.message });
+    return response.status(401).json({ message: err.message });
   }
 };
 export default updateUserController;
