@@ -18,12 +18,8 @@ const updateRepositoriesService = ({ name, email, id }) => {
   if (indexUser === -1) {
     throw new Error("User not found");
   } else {
-    console.log(idParams);
-
     users[indexUser] = { ...users[indexUser], ...updatedUser };
     const userDbUpdated = users.find((user) => user.id === idParams);
-
-    console.log(idParams);
 
     const { name, email, updatedOn, createdOn, isAdm, id } = userDbUpdated;
     return { name, email, updatedOn, createdOn, isAdm, id };
